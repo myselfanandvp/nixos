@@ -189,7 +189,7 @@ services.keyd = {
   fd
   tree
   ruff
-
+gcc
   ];
 
 
