@@ -31,8 +31,8 @@ boot = {
     };
 
     kernelParams = [
-      "quiet"
       "splash"
+      "quiet"
     ];
   };
 
@@ -67,7 +67,15 @@ nix.settings.experimental-features = [ "nix-command" "flakes" ];
   };
 
 fonts.packages = with pkgs; [
-  jetbrains-mono
+  nerd-fonts.jetbrains-mono
+  nerd-fonts.symbols-only
+  nerd-fonts.fira-code
+  nerd-fonts.meslo-lg
+  nerd-fonts.hack
+  noto-fonts             # Core Google Noto fonts (Latin, Cyrillic, Greek, Arabic, etc.)
+  noto-fonts-cjk-sans    # Sans-serif for Chinese, Japanese, and Korean
+  noto-fonts-cjk-serif   # Serif for Chinese, Japanese, and Korean
+  noto-fonts-color-emoji
 ];
 
 
