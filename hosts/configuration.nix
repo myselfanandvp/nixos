@@ -91,10 +91,14 @@ fonts.packages = with pkgs; [
    # 1. Enable SDDM
   services.displayManager.sddm ={
       enable = true;
-      theme = "sddm-astronaut-theme";
+      theme = "sddm-astronaut";
       extraPackages = [pkgs.sddm-astronaut];
     };
   
+
+
+
+
   # Configure keymap in X11
   services.xserver.xkb = {
     layout = "us";
@@ -179,6 +183,8 @@ services.keyd = {
   #  vim # do not forget to add an editor to edit configuration.nix! the nano editor is also installed by default.
   wget
   noctalia-shell
+sddm-chili-theme
+xwayland-satellite
   eza
   yazi
   uv
@@ -202,6 +208,7 @@ services.keyd = {
   curl
   wget
   git
+  power-profiles-daemon
   nodejs_24
   fd
   tree
