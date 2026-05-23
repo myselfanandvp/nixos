@@ -75,9 +75,18 @@ fonts.packages = with pkgs; [
   services.xserver.enable = true;
 
   # Enable the GNOME Desktop Environment.
-  services.displayManager.gdm.enable = true;
-  services.desktopManager.gnome.enable = true;
+  # services.displayManager.gdm.enable = true;
+  # services.desktopManager.gnome.enable = true;
 
+
+
+   # 1. Enable SDDM
+  services.displayManager.sddm ={
+      enable = true;
+      theme = "sddm-astronaut-theme";
+      extraPackages = [pkgs.sddm-astronaut];
+    };
+  
   # Configure keymap in X11
   services.xserver.xkb = {
     layout = "us";
@@ -189,10 +198,11 @@ services.keyd = {
   fd
   tree
   ruff
-gcc
+  gcc
+  sddm-astronaut
   ];
 
-
+programs.nix-ld.enable = true;
 environment.variables = {
   EDITOR = "nvim";
   NIX_BUILD_CORES = "4";
